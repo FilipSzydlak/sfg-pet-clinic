@@ -12,6 +12,13 @@
 
     <artifactId>pet-clinic-data</artifactId>
 
+    <properties>
+        <spring-boot.repackage.skip> true </spring-boot.repackage.skip>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,9 +46,7 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <spring-boot.repackage.skip> true </spring-boot.repackage.skip>
-    </properties>
+
 
 
     <build>
