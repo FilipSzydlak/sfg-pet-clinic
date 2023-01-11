@@ -2,6 +2,7 @@ package filip.springframework.sfgpetclinic.bootstrap;
 
 
 import filip.springframework.sfgpetclinic.model.Owner;
+import filip.springframework.sfgpetclinic.model.Pet;
 import filip.springframework.sfgpetclinic.model.PetType;
 import filip.springframework.sfgpetclinic.model.Vet;
 import filip.springframework.sfgpetclinic.services.OwnerService;
@@ -9,6 +10,8 @@ import filip.springframework.sfgpetclinic.services.PetTypeService;
 import filip.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -36,17 +39,37 @@ public class DataLoader implements CommandLineRunner {
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
-        owner1.setLastName("Wetson");
+        owner1.setLastName("Weston");
+        owner1.setAddress("123 Brickerel");
+        owner1.setCity("Miami");
+        owner1.setTelephone("1231231234");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Rosco");
+        owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("123 Brickerel");
+        owner2.setCity("Miami");
+        owner2.setTelephone("1231231234");
+
+        Pet fionasCat = new Pet();
+        fionasCat.setPetType(savedCatPetType);
+        fionasCat.setOwner(owner2);
+        fionasCat.setBirthDate(LocalDate.now());
+        fionasCat.setName("Just Cat");
+        owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners...");
+        System.out.println("Loaded Owners....");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -60,6 +83,6 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets...");
+        System.out.println("Loaded Vets....");
     }
 }
