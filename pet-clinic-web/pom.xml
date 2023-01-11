@@ -53,6 +53,8 @@
         </dependency>
 
         <!-- webjars -->
+        <!-- webjars -->
+        <!-- webjars -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator-core</artifactId>
@@ -68,6 +70,7 @@
             <version>${webjars-font-awesome.version}</version>
         </dependency>
         <!-- end of webjars -->
+        <!-- end of webjars -->
 
 
     </dependencies>
@@ -80,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
+
                 <executions>
                     <execution>
                         <id>unpack</id>
